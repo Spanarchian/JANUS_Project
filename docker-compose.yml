@@ -1,5 +1,7 @@
+version: '3'
+
 services:
   app:
-    build: .
+    image: spanarchian/janusservice
     ports:
       - '8008:8008'
