@@ -1,7 +1,12 @@
 version: '3'
 
 services:
-  app:
-    image: spanarchian/janusservice
+  b_end:
+    image: spanarchian/janusservice:v0.0.1
     ports:
       - '8008:8008'
+
+  f_end:
+    build: ./frontend/
+    ports:
+      - '80:80'

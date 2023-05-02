@@ -32,3 +32,13 @@ async def read_user_by_ref(userId: str):
     profile = users_list[ userId ]
     print(f"{profile} is of type {type(profile)}")
     return profile
+
+@router.post("/create", tags=["users"])
+async def create_user(userProfile):
+    print(f"{userProfile} is of type {type(userProfile)}")
+    return userProfile
+
+@router.put("/update", tags=["users"])
+async def update_user(userProfile):
+    print(f"{userProfile} is of type {type(userProfile)}")
+    return userProfile
