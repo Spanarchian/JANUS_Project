@@ -7,6 +7,8 @@ import time
 
 
 from .janus_extract.reportcip import router as ciprouter
+from .janus_extract.reportcop import router as coprouter
+from .janus_extract.reportSitRep import router as SitReprouter
 from .janus_ingest.message import router as messagerouter
 from .janus_management.users import router as usersrouter
 from .janus_management.auth import router as authrouter
@@ -27,6 +29,8 @@ api.add_middleware(
 )
 
 api.include_router(ciprouter)
+api.include_router(coprouter)
+api.include_router(SitReprouter)
 api.include_router(messagerouter)
 api.include_router(usersrouter)
 api.include_router(authrouter)

@@ -1,8 +1,8 @@
 from fastapi import APIRouter
 
 router = APIRouter(
-    prefix="/cip",
-    tags=["cip"],
+    prefix="/sitrep",
+    tags=["sitrep"],
     # dependencies=[Depends(get_token_header)],
     responses={404: {"description": "Not found"}},
 )
@@ -12,17 +12,17 @@ def get_root():
     return {"status": {"Janus extract processor":"Inteligence"}}
 
 
-@router.get("/live", tags=["cip","live"])
+@router.get("/live", tags=["live"])
 async def cip_now():
-    return {"CIP": "LIVE"}
+    return {"sitrep": "LIVE"}
 
 
 @router.get("/history", tags=["cip","history"])
 async def cip_history():
-    return [{"CIP": "HISTORY"}, {"Status": "Actual display at the time"}]
+    return [{"sitrep": "HISTORY"}, {"Status": "Actual sitrep display at the time"}]
 
 
 @router.get("/filter", tags=["cip","current"])
 async def cip_filter():
-    return [{"CIP": "FILTER"}, {"Parameters": f"from: {'strt'} - till: {'till'}"}]
+    return [{"sitrep": "FILTER"}, {"Parameters": f"from: {'strt'} - till: {'till'}"}]
 
